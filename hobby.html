@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Hobby: Travelling</title>
+    <style>
+    /*  Hobby Page Styles */
+
+    /* Set the default margin and font for the hobby page */
+    .hobby body{
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    /* Header (Introduction Section) */
+
+    /* Full-screen header with background image */
+    header {
+        display: flex;
+        width: 100%;
+        height: 100vh;
+        background-size: cover;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: rgb(0, 0, 0);
+        background-image: url('https://shorturl.at/UbheH');
+    }
+
+    /* Introductory quote text */
+    .intro {
+        font-size: 20px;
+        color: rgb(0, 0, 0);
+    }
+
+    /* Semi-transparent content box inside the header */
+    #introBox {
+        width: 75%;
+        height: auto;
+        background-color: rgba(255, 255, 255, 0.7);
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    /* Explore More button */
+    .explore-button{
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 18px;
+        color: #fff;
+        background-color: #007bff;
+        border: none;
+        border-radius: 5px;
+        text-decoration: none;
+    }
+
+    /* Navigation Bar */
+
+    /* Sticky navigation menu */
+    nav {
+        display: flex;
+        justify-content: space-around;
+        background-color: #0800ff;
+        padding: 20px 60px;
+        text-align: center;
+        position: sticky;
+        top: 0;
+    }
+
+    /* Navigation links */
+    nav a {
+        color: white;
+        text-decoration: none;
+        margin: 0 15px;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    /* About Section */
+
+    /* About section background and alignment */
+    #about{
+        padding: 20px;
+        background-color: #f2f2f2;
+        text-align: center;
+    }
+
+    /* Section headings */
+    .hobby h2{
+        text-align: center;
+        font-size: 35px;
+        margin-bottom: 25px;
+    }
+
+    /* Favorite Places Section */
+
+    /* Container for the Favorite Places section */
+    #favoriteContainer {
+        background-color: rgb(180, 231, 253);
+        padding-top: 10px;
+        text-align: center;
+    }
+
+    /* Flex container that holds all place cards */
+    .places {
+        width: 100%;
+        padding: 20px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        background-color: #007bff;
+    }
+
+    /* Individual place card */
+    .place {
+        width: 220px;
+        height: 140px;
+        margin: 20px;
+        text-align: center;
+        background: linear-gradient(to bottom, #e6e6e6, #ffffff, #ccd2ff);
+        padding: 20px;
+        border-radius: 15px;
+        color: rgb(0, 55, 255);
+        box-shadow: 5px 12px 8px rgba(0, 31, 157, 0.1);
+        transition:.3s;
+    }
+
+    .place:hover{
+        transform:translateY(-10px);
+        color: rgb(0, 149, 255);
+    }
+
+    /*  Benefits Section */
+
+    /* Benefits section layout */
+    #benefits {
+        padding: 20px;
+        justify-content: center;
+        text-align: center;
+        margin: 0 auto;
+        height: auto;
+        width: 400px;
+    }
+
+    /* Styled list container */
+    .list {
+        text-align: left;
+        width: 100%;
+        padding: 10px;
+        background-color: rgb(180, 231, 253);
+        border-radius: 20px;
+    }
+
+    /* Contact Section (Footer) */
+
+    /* Contact information section */
+    #contact {
+        padding: 10px;
+        text-align: center;
+        background-color: #007bff;
+        color: white;
+        height: 130px;
+    }
+    #buttonContainer{
+        display: flex;
+        justify-content: flex-end;
+        margin: 15px;
+    }
+    .back {
+        height: 30px;
+        width: 70px;
+        background-color: #007bff;
+        color: white;
+        font-size: 16px;
+        font-style: bold;
+        border-style: none;
+        border-radius: 25px;
+    }
+    </style>
+</head>
+
+<body class="hobby">
+    <header>
+        <div id="introBox">
+            <h1 style="font-size: 50px;">My Hobby: Travelling</h1>
+            <p class="intro">"Traveling is the only thing that makes me feel alive."</p>
+            <a href="#about" class="explore-button">Explore More</a>
+        </div>
+    </header>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#places">Favorite Places</a>
+        <a href="#benefits">Benefits</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="about">
+        <h2>About My Hobby</h2>
+        <p>
+            Travelling is my favorite hobby because it allows me to discover new
+            places, experience different cultures, taste delicious foods, and meet
+            amazing people. Every journey teaches me something new and creates
+            unforgettable memories.
+        </p>
+    </section>
+
+    <section id="favoriteContainer">
+        <h2>My Favorite Places</h2>
+
+        <div class="places">
+            <div class="place">
+                <h3>🏖 Beaches</h3>
+                <p style="color:rgb(73, 73, 73)">I love relaxing by the sea, swimming, and watching beautiful sunsets.</p>
+            </div>
+            <div class="place">
+                <h3>🏔 Mountains</h3>
+                <p style="color:rgb(73, 73, 73)">I enjoy hiking in the mountains and breathing in the fresh air.</p>
+            </div>
+            <div class="place">
+                <h3>🏙 Cities</h3>
+                <p style="color:rgb(73, 73, 73)">I love exploring vibrant cities, trying new cuisines, and experiencing the local nightlife.</p>
+            </div>
+        </div>  
+    </section>
+
+    <section id="benefits">
+        <h2>Benefits of Travelling</h2>
+
+        <div class="list">
+            <ul>
+                <li>✔ Learn about different cultures.</li>
+                <li>✔ Reduces stress and refreshes the mind.</li>
+                <li>✔ Creates unforgettable memories.</li>
+                <li>✔ Improves confidence and communication skills.</li>
+                <li>✔ Makes life more adventurous.</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <h3>Thank You for Visiting!</h3>
+        <p>Created by: May Thiri Kyaw</p>
+        <a href="mailto:maythiri157185@email.com" style="color: rgb(193, 220, 255); text-decoration: underline;">Email: maythiri157185@email.com</a>
+    </footer>
+    <div id="buttonContainer">
+        <button class="back" onclick="location.href='index.html'">Back</button>
+    </div>
+    
+
+
+</body>
+</html>

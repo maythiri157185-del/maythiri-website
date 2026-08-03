@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+
+<body>
+<p>How far from University?</p>
+<button onclick = "getLocation()">Try it</button>
+<p id="demo"></p>
+<button onclick="location.href='index.html'">Back</button>
+
+
+<script>
+    const a = document.getElementById("demo");
+    function getLocation() {
+        try{
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } catch(err) {
+            a.innerHTML = err;
+        }
+    }
+    function showPosition(position) {
+        let x = position.coords.latitude;
+        let y = position.coords.longitude;
+        a.innerHTML = "Latitude: "+ x +
+        "<br>Longitude: "+y;
+
+        calculateDistanceUni(x,y);
+    }
+    function calculateDistanceUni(x,y){
+        let distance = Math.sqrt(x * x + y * y);
+        document.getElementById("demo").innerHTML = "Distance: "+distance;
+
+    }
+</script>
+
+</body>
+</html>
+

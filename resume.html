@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<style>
+/*  Resume Page Styles */
+/* Apply Arial font to all elements on the webpage */
+* {
+    
+    font-family: Arial, sans-serif;
+}
+
+/* Name header */
+#name {
+    font-weight: bold;
+    text-align: center;
+    background-color: #0800ff;
+    padding: 10px;
+    color: white;
+    box-shadow: 15px 50px 30px rgb(0, 0, 0); /* Subtle shadow for depth */
+}
+
+.resume{
+    margin: 0 auto;
+    width: 100%;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+/* Main container of the portfolio */
+#mother {
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(#ffffff, #f2f2f2, #007bff); /* Gradient background */
+    
+}
+
+#container {
+    width: 70%;
+    height: auto;
+    padding: 20px;
+    box-sizing: border-box; /* Include padding in width and height */
+}
+
+/* About Me section */
+#aboutMe {
+    width: 95%;
+    padding: 10px 20px;
+}
+
+/* Contact information container */
+.contactItem {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* List of contact details */
+.list {
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+/* Contact section heading */
+.contactbox {
+    width: 90px;
+    height: 20px;
+    padding: 15px 20px;
+    border-radius: 25px;
+    color: white;
+    background-color: #007bff;
+    box-shadow: 5px 2px 10px rgb(11, 0, 129); /* Subtle shadow for depth */
+}
+
+/* Career Objective section */
+#careerObjective {
+    width: 95%;
+    padding: 10px 20px;
+    text-align: justify;
+}
+
+/* Career Objective heading */
+.careerbox {
+    width: 160px;
+    height: 20px;
+    color: white;
+    background-color: #007bff;
+    padding: 15px 20px;
+    border-radius: 25px;
+    box-shadow: 5px 2px 10px rgb(11, 0, 129); /* Subtle shadow for depth */
+
+}
+
+
+/* Container for Technical Skills and Education sections */
+#middlemother {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 95%;
+}
+
+/* Paragraph text */
+.script {
+    font-size: 15px;
+}
+
+/* Technical Skills heading */
+.techbox {
+    width: 160px;
+    height: 20px;
+    color: white;
+    background-color: #007bff;
+    padding: 15px 20px;
+    border-radius: 25px;
+    box-shadow: 5px 2px 10px rgb(11, 0, 129); /* Subtle shadow for depth */
+}
+
+
+/* Technical Skills section */
+#techskill {
+    width: 50%;
+    display: inline-block;
+    vertical-align: top;      /* Align with Education section */
+    padding: 10px 20px;
+    box-sizing: border-box;   /* Include padding inside width */
+}
+
+/* Education section */
+#education {
+    width: 50%;
+    display: inline-block;
+    vertical-align: top;
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
+
+/* Education heading */
+.educationbox {
+    width: 90px;
+    height: 20px;
+    color: white;
+    background-color: #007bff;
+    padding: 15px 20px;
+    border-radius: 25px;
+    box-shadow: 5px 2px 10px rgb(11, 0, 129); /* Subtle shadow for depth */
+}
+
+/* Each education item (logo + text) */
+.educationitem {
+    display: flex;
+    align-items: center;
+    gap: 20px;                /* Space between image and text */
+    margin-bottom: 20px;
+}
+
+/* Education logos */
+.educationitem img {
+    width: 60px;
+    height: 70px;
+}
+
+/* Skills table */
+.resume table {
+    border: solid 3px black;  /* Note: removed the comma */
+    border-radius: 15px;
+    padding: 10px;
+    background: linear-gradient(to bottom, #e6e6e6, #ffffff, #ccd2ff);
+}
+
+/* Hyperlinks */
+a.resume {
+    text-decoration: underline;
+}
+
+/* Main banner image */
+#image {
+    width: 1500px;
+    height: 500px;
+}
+
+/* Paragraph spacing */
+p.resume {
+    padding-left: 15px;
+}
+
+/* Default style for all images */
+img.resume {
+    width: 50px;
+    height: 60px;
+    display: inline-block;
+}
+#buttonContainer{
+    display: flex;
+    justify-content: flex-end;
+    margin: 15px;
+}
+.back {
+    height: 30px;
+    width: 70px;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    font-style: bold;
+    border-style: none;
+    border-radius: 25px;
+}
+
+</style>
+    
+</head>
+
+<body class="resume">
+    <!-- Portfolio header containing name and education -->
+    <div id="name">
+        <h1>MS. MAY THIRI KYAW</h1>
+        <h2>Digital Technology Innovation Major</h2>
+        <h2>Kasem Bundit University</h2>
+    </div>
+
+    <!-- Main container for the entire portfolio -->
+    <div id="mother">
+        <div id="container">
+            <!-- Contact Information Section -->
+        <div id="aboutMe">
+
+            <!-- Contact section title -->
+            <h3 class="contactbox">Contact:</h3>
+
+            <!-- Container for all contact information -->
+            <div class="contactItem">
+
+                <!-- Student ID -->
+                <div>
+                    <img style="width:20px; height:20px; padding:0px 10px 0px;"
+                        src="https://static.vecteezy.com/system/resources/thumbnails/049/656/758/small/a-woman-in-a-suit-and-tie-icon-free-png.png" />
+
+                    <strong>Student's ID:</strong>
+                    <span>250702404285</span>
+                </div>
+
+                <!-- Email Address -->
+                <div class="contactItem">
+                    <img style="width:20px; height:20px; padding:0px 10px 0px;"
+                        src="https://bit.ly/4p7HYfy" />
+
+                    <strong>Email:</strong>
+
+                    <!-- Clicking the email opens the default email application -->
+                    <a href="mailto:maythiri157185@gamil.com">
+                        maythiri157185@gmail.com
+                    </a>
+                </div>
+
+                <!-- Phone Number -->
+                <div class="contactItem">
+                    <img style="width:20px; height:20px; padding:0px 10px 0px;"
+                        src="https://pngimg.com/uploads/phone/phone_PNG48988.png" />
+
+                    <strong>Phone Number:</strong>
+                    <span>+66 948935124</span>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Career Objective Section -->
+        <div id="careerObjective">
+
+            <!-- Section title -->
+            <h3 class="careerbox">Career Objective</h3>
+
+            <!-- Career objective paragraph -->
+            <p class="script">
+                Motivated second-year Computer Science student with a strong interest in web development and mobile application development.
+                Passionate about learning new technologies and improving programming, problem-solving, and software development skills through academic projects
+                and self-study. Eager to apply technical knowledge in real-world environments through internships and collaborative projects while gaining
+                valuable professional experience. Committed to continuous learning, teamwork, and developing innovative software solutions that contribute
+                to organizational success. Seeking opportunities to grow as a software developer and build a successful career in the technology industry.
+            </p>
+
+        </div>
+
+        <!-- Container for Technical Skills and Education -->
+        <div id="middlemother">
+
+            <!-- Technical Skills Section -->
+            <div id="techskill">
+
+                <h3 class="techbox">Technical Skills</h3>
+
+                <!-- Skills table -->
+                <table>
+                    <tbody>
+
+                        <!-- Programming Skills -->
+                        <tr align="left" valign="top">
+                            <th>
+                                <h4>Programming Related Skills</h4>
+                            </th>
+
+                            <td>
+                                <ul>
+                                    <li>Python</li>
+                                    <li>HTML</li>
+                                    <li>CSS</li>
+                                </ul>
+                            </td>
+                        </tr>
+
+                        <!-- Other Technical Skills -->
+                        <tr align="left" valign="top">
+                            <th>
+                                <h4>Other Soft Skills</h4>
+                            </th>
+
+                            <td>
+                                <ul>
+                                    <li>Adobe Photoshop</li>
+                                    <li>Adobe Illustrator</li>
+                                    <li>Microsoft Word</li>
+                                    <li>Microsoft Excel</li>
+                                </ul>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+
+            <!-- Education Section -->
+            <div id="education">
+
+                <h3 class="educationbox">Education</h3>
+
+                <!-- Yangon Technological University -->
+                <div class="educationitem">
+                    <img src="https://bit.ly/4wmrnqK" />
+
+                    <span style="padding-left:10px;">Studied at</span>
+
+                    <a href="https://www.ytu.edu.mm/">
+                        Yangon Technology University (YTU)
+                    </a>
+                </div>
+
+                <!-- Kasem Bundit University -->
+                <div class="educationitem">
+                    <img src="https://bit.ly/4eUWyCj" />
+
+                    <span style="padding-left:10px;">Studying at</span>
+
+                    <a href="https://kbu.ac.th/">
+                        Kasem Bundit University (KBU)
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+        </div>
+        
+    </div>
+    <div id="buttonContainer">
+        <button class="back" onclick="location.href='index.html'">Back</button>
+    </div>
+</body>
+
+</html>

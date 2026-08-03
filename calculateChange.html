@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 380px;
+            height: auto;
+            border: 1px solid #ccc;
+            border-radius: 25px;
+            box-shadow: 3px 2px 10px rgb(117, 117, 117);
+        }
+        #items{
+            margin-bottom: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="items">
+            <h2>Calculate Change</h2>
+            <span>Enter Amount:</span>
+            <input type="number" id="amount" required>
+            <button onclick="calculateChange()">Submit</button>
+            <p id="result"> </p>
+            <button onclick="location.href='index.html'">Back</button>
+        </div>
+
+    </div>
+
+    <script>
+        function calculateChange() {
+            let change = [1000,500,100,50,20,10,5,2,1]
+            let amount = Number(document.getElementById("amount").value);
+            let result = "";
+            if (amount<0){
+                alert("Please fill valid change.")
+                return
+            }
+
+            for (let i=0; i<change.length;i++) {
+                let count = 0;
+                while (amount>=change[i]){
+                    amount -= change[i];
+                    count++;
+                }
+
+                if (count>0) {
+                    result += count + " of   $" + change[i] + "<br>";
+                }
+            }
+            document.getElementById("result").innerHTML = result;
+        }
+    </script>
+        
+</body>
+</html>
