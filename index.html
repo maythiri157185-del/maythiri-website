@@ -1,39 +1,102 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="manifest" href="./manifest.json">
-</head>
-<body>
-    <h2>Assignments</h2>
+<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Assignments</title>
 
-    <button onclick="location.href='resume.html'">My Resume</button>
-    <br><br>
-    
-    <button onclick="location.href='hobby.html'">My Hobby</button>
-    <br><br>
+<link rel="manifest" href="./manifest.json">
 
-    <button onclick="location.href='converter.html'">Converter</button>
-    <br><br>
+<style>
+    * {
+        box-sizing: border-box;
+    }
 
-    <button onclick="location.href='calculateGrade.html'">Calculate Grade</button>
-    <br><br>
+    body {
+        margin: 0;
+        padding: 24px 16px;
+        min-height: 100vh;
+        font-family: Arial, sans-serif;
+        background: #f5f7fa;
+        text-align: center;
+    }
 
-    <button onclick="location.href='calculateChange.html'">Calculate Change</button>
-    <br><br>
+    .container {
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+    }
 
-    <button onclick="location.href='distance.html'">Distance</button>
-    <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('./service-worker.js')
-            .then((registration) => {
+    h1 {
+        margin: 20px 0 30px;
+        font-size: 32px;
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .menu button {
+        width: 100%;
+        min-height: 56px;
+        padding: 14px 20px;
+        border: none;
+        border-radius: 12px;
+        font-size: 18px;
+        font-weight: 600;
+        cursor: pointer;
+        background: white;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+    }
+
+    .menu button:active {
+        transform: scale(0.98);
+    }
+</style>
+
+</head> <body>
+<div class="container">
+
+    <h1>Assignments</h1>
+
+    <div class="menu">
+
+        <button onclick="location.href='resume.html'">
+            My Resume
+        </button>
+
+        <button onclick="location.href='hobby.html'">
+            My Hobby
+        </button>
+
+        <button onclick="location.href='converter.html'">
+            Converter
+        </button>
+
+        <button onclick="location.href='calculateGrade.html'">
+            Calculate Grade
+        </button>
+
+        <button onclick="location.href='calculateChange.html'">
+            Calculate Change
+        </button>
+
+        <button onclick="location.href='distance.html'">
+            Distance
+        </button>
+
+    </div>
+
+</div>
+
+<script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./service-worker.js')
+            .then(() => {
                 console.log('Service Worker Registered');
             })
             .catch((error) => {
                 console.error('Service Worker registration failed:', error);
             });
-        }
-    </script>
-</body>
-</html>
+    }
+</script>
+
+</body> </html>
