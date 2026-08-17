@@ -4,154 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Assignments</title>
-
-    <link rel="manifest" href="./manifest.json">
+    <title>CSS Test</title>
 
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
         body {
-            min-height: 100vh;
+            background-color: #E8F3FE;
             font-family: Arial, sans-serif;
-
-            /* Blue background */
-            background: #E8F3FE;
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            padding: 20px;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 500px;
             text-align: center;
+            padding: 30px;
         }
 
         h1 {
-            color: white;
-            font-size: 36px;
-            margin-bottom: 30px;
+            color: #222;
         }
 
-        .menu {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .menu button {
+        button {
+            display: block;
             width: 100%;
-            min-height: 60px;
-
-            padding: 15px 20px;
-
+            max-width: 500px;
+            margin: 15px auto;
+            padding: 18px;
             border: none;
             border-radius: 12px;
-
-            background: white;
-            color: #222;
-
+            background-color: white;
             font-size: 18px;
-            font-weight: 600;
-
-            cursor: pointer;
-
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-
-            transition: 0.2s;
-        }
-
-        .menu button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .menu button:active {
-            transform: scale(0.97);
-        }
-
-        /* Mobile */
-        @media (max-width: 500px) {
-
-            body {
-                padding: 20px 16px;
-            }
-
-            h1 {
-                font-size: 30px;
-                margin-bottom: 25px;
-            }
-
-            .menu {
-                gap: 12px;
-            }
-
-            .menu button {
-                min-height: 58px;
-                font-size: 17px;
-            }
         }
     </style>
 </head>
 
 <body>
 
-    <main class="container">
+    <h1>Assignments</h1>
 
-        <h1>Assignments</h1>
-
-        <div class="menu">
-
-            <button onclick="location.href='resume.html'">
-                My Resume
-            </button>
-
-            <button onclick="location.href='hobby.html'">
-                My Hobby
-            </button>
-
-            <button onclick="location.href='converter.html'">
-                Converter
-            </button>
-
-            <button onclick="location.href='calculateGrade.html'">
-                Calculate Grade
-            </button>
-
-            <button onclick="location.href='calculateChange.html'">
-                Calculate Change
-            </button>
-
-            <button onclick="location.href='distance.html'">
-                Distance
-            </button>
-
-        </div>
-
-    </main>
-
-    <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('./service-worker.js')
-                .then(() => {
-                    console.log('Service Worker Registered');
-                })
-                .catch((error) => {
-                    console.error(
-                        'Service Worker registration failed:',
-                        error
-                    );
-                });
-        }
-    </script>
+    <button>My Resume</button>
+    <button>My Hobby</button>
+    <button>Converter</button>
+    <button>Calculate Grade</button>
+    <button>Calculate Change</button>
+    <button>Distance</button>
 
 </body>
 </html>
