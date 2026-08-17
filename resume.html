@@ -1,372 +1,528 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Resume</title>
 
-<head>
 <style>
-/*  Resume Page Styles */
-/* Apply Arial font to all elements on the webpage */
-* {
-    
-    font-family: Arial, sans-serif;
-}
+    * {
+        box-sizing: border-box;
+    }
 
-/* Name header */
-#name {
-    font-weight: bold;
-    text-align: center;
-    background-color: #0800ff;
-    padding: 10px;
-    color: white;
-    box-shadow: 15px 50px 30px rgb(0, 0, 0); /* Subtle shadow for depth */
-}
+    html {
+        scroll-behavior: smooth;
+    }
 
-.resume{
-    margin: 0 auto;
-    width: 100%;
-    height: 100vh;
-    font-family: Arial, sans-serif;
-}
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background: #f2f6ff;
+        color: #222;
+        line-height: 1.6;
+    }
 
-/* Main container of the portfolio */
-#mother {
-    display: flex;
-    justify-content: center;
-    background: linear-gradient(#ffffff, #f2f2f2, #007bff); /* Gradient background */
-    
-}
+    /* Header */
+    #name {
+        background: #0800ff;
+        color: white;
+        text-align: center;
+        padding: 28px 16px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    }
 
-#container {
-    width: 70%;
-    height: auto;
-    padding: 20px;
-    box-sizing: border-box; /* Include padding in width and height */
-}
+    #name h1 {
+        margin: 0 0 8px;
+        font-size: clamp(26px, 7vw, 42px);
+    }
 
-/* About Me section */
-#aboutMe {
-    width: 95%;
-    padding: 10px 20px;
-}
+    #name h2 {
+        margin: 4px 0;
+        font-size: clamp(16px, 4vw, 22px);
+        font-weight: normal;
+    }
 
-/* Contact information container */
-.contactItem {
-    display: flex;
-    justify-content: space-between;
-}
+    /* Main background */
+    #mother {
+        width: 100%;
+        padding: 20px 12px;
+        background: linear-gradient(
+            to bottom,
+            #ffffff,
+            #f2f6ff
+        );
+    }
 
-/* List of contact details */
-.list {
-    height: 100px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-}
+    /* Main resume container */
+    #container {
+        width: 100%;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0;
+    }
 
-/* Contact section heading */
-.contactbox {
-    width: 90px;
-    height: 20px;
-    padding: 15px 20px;
-    border-radius: 25px;
-    color: white;
-    background-color: #007bff;
-    box-shadow: 5px 2px 10px rgb(11, 0, 129); /* Subtle shadow for depth */
-}
+    /* General sections */
+    #aboutMe,
+    #careerObjective,
+    #techskill,
+    #education {
+        width: 100%;
+        margin-bottom: 28px;
+    }
 
-/* Career Objective section */
-#careerObjective {
-    width: 95%;
-    padding: 10px 20px;
-    text-align: justify;
-}
+    /* Section title */
+    .section-title {
+        display: inline-block;
+        margin: 0 0 16px;
+        padding: 10px 18px;
+        border-radius: 25px;
+        background: #007bff;
+        color: white;
+        font-size: 18px;
+        box-shadow: 0 3px 8px rgba(11, 0, 129, 0.35);
+    }
 
-/* Career Objective heading */
-.careerbox {
-    width: 160px;
-    height: 20px;
-    color: white;
-    background-color: #007bff;
-    padding: 15px 20px;
-    border-radius: 25px;
-    box-shadow: 5px 2px 10px rgb(11, 0, 129); /* Subtle shadow for depth */
+    /* Contact information */
+    .contact-list {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+    }
 
-}
+    .contactItem {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 14px;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        overflow-wrap: anywhere;
+    }
 
+    .contactItem img {
+        width: 24px !important;
+        height: 24px !important;
+        object-fit: contain;
+        padding: 0 !important;
+        flex-shrink: 0;
+    }
 
-/* Container for Technical Skills and Education sections */
-#middlemother {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    width: 95%;
-}
+    .contactItem strong {
+        flex-shrink: 0;
+    }
 
-/* Paragraph text */
-.script {
-    font-size: 15px;
-}
+    .contactItem a {
+        color: #0056b3;
+        text-decoration: none;
+    }
 
-/* Technical Skills heading */
-.techbox {
-    width: 160px;
-    height: 20px;
-    color: white;
-    background-color: #007bff;
-    padding: 15px 20px;
-    border-radius: 25px;
-    box-shadow: 5px 2px 10px rgb(11, 0, 129); /* Subtle shadow for depth */
-}
+    .contactItem a:hover {
+        text-decoration: underline;
+    }
 
+    /* Career objective */
+    #careerObjective {
+        padding: 0;
+    }
 
-/* Technical Skills section */
-#techskill {
-    width: 50%;
-    display: inline-block;
-    vertical-align: top;      /* Align with Education section */
-    padding: 10px 20px;
-    box-sizing: border-box;   /* Include padding inside width */
-}
+    #careerObjective p {
+        margin: 0;
+        padding: 18px;
+        background: white;
+        border-radius: 12px;
+        text-align: left;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        font-size: 16px;
+    }
 
-/* Education section */
-#education {
-    width: 50%;
-    display: inline-block;
-    vertical-align: top;
-    padding: 10px 20px;
-    box-sizing: border-box;
-}
+    /* Skills and education */
+    #middlemother {
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+        width: 100%;
+    }
 
-/* Education heading */
-.educationbox {
-    width: 90px;
-    height: 20px;
-    color: white;
-    background-color: #007bff;
-    padding: 15px 20px;
-    border-radius: 25px;
-    box-shadow: 5px 2px 10px rgb(11, 0, 129); /* Subtle shadow for depth */
-}
+    #techskill,
+    #education {
+        padding: 0;
+    }
 
-/* Each education item (logo + text) */
-.educationitem {
-    display: flex;
-    align-items: center;
-    gap: 20px;                /* Space between image and text */
-    margin-bottom: 20px;
-}
+    /* Skills table */
+    .skills-table-container {
+        width: 100%;
+        overflow-x: auto;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
 
-/* Education logos */
-.educationitem img {
-    width: 60px;
-    height: 70px;
-}
+    .resume-table {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 280px;
+    }
 
-/* Skills table */
-.resume table {
-    border: solid 3px black;  /* Note: removed the comma */
-    border-radius: 15px;
-    padding: 10px;
-    background: linear-gradient(to bottom, #e6e6e6, #ffffff, #ccd2ff);
-}
+    .resume-table th,
+    .resume-table td {
+        padding: 14px 12px;
+        border-bottom: 1px solid #ddd;
+        text-align: left;
+        vertical-align: top;
+    }
 
-/* Hyperlinks */
-a.resume {
-    text-decoration: underline;
-}
+    .resume-table tr:last-child th,
+    .resume-table tr:last-child td {
+        border-bottom: none;
+    }
 
-/* Main banner image */
-#image {
-    width: 1500px;
-    height: 500px;
-}
+    .resume-table th {
+        width: 45%;
+        font-size: 15px;
+    }
 
-/* Paragraph spacing */
-p.resume {
-    padding-left: 15px;
-}
+    .resume-table ul {
+        margin: 0;
+        padding-left: 20px;
+    }
 
-/* Default style for all images */
-img.resume {
-    width: 50px;
-    height: 60px;
-    display: inline-block;
-}
-#buttonContainer{
-    display: flex;
-    justify-content: flex-end;
-    margin: 15px;
-}
-.back {
-    height: 30px;
-    width: 70px;
-    background-color: #007bff;
-    color: white;
-    font-size: 16px;
-    font-style: bold;
-    border-style: none;
-    border-radius: 25px;
-}
+    .resume-table li {
+        margin-bottom: 4px;
+    }
 
+    /* Education */
+    .education-list {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .educationitem {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 16px;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .educationitem img {
+        width: 60px;
+        height: 60px;
+        object-fit: contain;
+        flex-shrink: 0;
+    }
+
+    .education-text {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        min-width: 0;
+    }
+
+    .education-text span {
+        font-size: 14px;
+        color: #555;
+    }
+
+    .education-text a {
+        color: #0056b3;
+        font-weight: bold;
+        text-decoration: none;
+        overflow-wrap: anywhere;
+    }
+
+    .education-text a:hover {
+        text-decoration: underline;
+    }
+
+    /* Back button */
+    #buttonContainer {
+        width: 100%;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 12px 30px;
+        text-align: center;
+    }
+
+    .back {
+        width: 100%;
+        max-width: 300px;
+        min-height: 52px;
+        border: none;
+        border-radius: 26px;
+        background: #007bff;
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+        box-shadow: 0 3px 8px rgba(11, 0, 129, 0.3);
+    }
+
+    .back:active {
+        transform: scale(0.98);
+    }
+
+    /* Tablet and desktop */
+    @media (min-width: 700px) {
+
+        #mother {
+            padding: 35px 25px;
+        }
+
+        #middlemother {
+            flex-direction: row;
+            align-items: flex-start;
+            gap: 30px;
+        }
+
+        #techskill,
+        #education {
+            flex: 1;
+        }
+
+        .contact-list {
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+    }
+
+    /* Small phones */
+    @media (max-width: 380px) {
+
+        body {
+            font-size: 15px;
+        }
+
+        #name {
+            padding: 22px 12px;
+        }
+
+        .contactItem {
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .contactItem strong {
+            font-size: 14px;
+        }
+
+        .contactItem span,
+        .contactItem a {
+            font-size: 14px;
+        }
+
+        .educationitem {
+            align-items: flex-start;
+        }
+
+        .educationitem img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .resume-table th,
+        .resume-table td {
+            padding: 10px 8px;
+            font-size: 14px;
+        }
+    }
 </style>
-    
-</head>
 
-<body class="resume">
-    <!-- Portfolio header containing name and education -->
-    <div id="name">
-        <h1>MS. MAY THIRI KYAW</h1>
-        <h2>Digital Technology Innovation Major</h2>
-        <h2>Kasem Bundit University</h2>
-    </div>
+</head> <body>
+<!-- Resume Header -->
+<header id="name">
+    <h1>MS. MAY THIRI KYAW</h1>
+    <h2>Digital Technology Innovation Major</h2>
+    <h2>Kasem Bundit University</h2>
+</header>
 
-    <!-- Main container for the entire portfolio -->
-    <div id="mother">
-        <div id="container">
-            <!-- Contact Information Section -->
-        <div id="aboutMe">
+<!-- Main Resume -->
+<main id="mother">
 
-            <!-- Contact section title -->
-            <h3 class="contactbox">Contact:</h3>
+    <div id="container">
 
-            <!-- Container for all contact information -->
-            <div class="contactItem">
+        <!-- Contact Information -->
+        <section id="aboutMe">
 
-                <!-- Student ID -->
-                <div>
-                    <img style="width:20px; height:20px; padding:0px 10px 0px;"
-                        src="https://static.vecteezy.com/system/resources/thumbnails/049/656/758/small/a-woman-in-a-suit-and-tie-icon-free-png.png" />
+            <h3 class="section-title">Contact</h3>
+
+            <div class="contact-list">
+
+                <div class="contactItem">
+                    <img
+                        src="https://static.vecteezy.com/system/resources/thumbnails/049/656/758/small/a-woman-in-a-suit-and-tie-icon-free-png.png"
+                        alt="Student icon">
 
                     <strong>Student's ID:</strong>
                     <span>250702404285</span>
                 </div>
 
-                <!-- Email Address -->
                 <div class="contactItem">
-                    <img style="width:20px; height:20px; padding:0px 10px 0px;"
-                        src="https://bit.ly/4p7HYfy" />
+                    <img
+                        src="https://bit.ly/4p7HYfy"
+                        alt="Email icon">
 
                     <strong>Email:</strong>
 
-                    <!-- Clicking the email opens the default email application -->
                     <a href="mailto:maythiri157185@gamil.com">
                         maythiri157185@gmail.com
                     </a>
                 </div>
 
-                <!-- Phone Number -->
                 <div class="contactItem">
-                    <img style="width:20px; height:20px; padding:0px 10px 0px;"
-                        src="https://pngimg.com/uploads/phone/phone_PNG48988.png" />
+                    <img
+                        src="https://pngimg.com/uploads/phone/phone_PNG48988.png"
+                        alt="Phone icon">
 
-                    <strong>Phone Number:</strong>
+                    <strong>Phone:</strong>
                     <span>+66 948935124</span>
                 </div>
 
             </div>
-        </div>
 
-        <!-- Career Objective Section -->
-        <div id="careerObjective">
+        </section>
 
-            <!-- Section title -->
-            <h3 class="careerbox">Career Objective</h3>
+        <!-- Career Objective -->
+        <section id="careerObjective">
 
-            <!-- Career objective paragraph -->
-            <p class="script">
-                Motivated second-year Computer Science student with a strong interest in web development and mobile application development.
-                Passionate about learning new technologies and improving programming, problem-solving, and software development skills through academic projects
-                and self-study. Eager to apply technical knowledge in real-world environments through internships and collaborative projects while gaining
-                valuable professional experience. Committed to continuous learning, teamwork, and developing innovative software solutions that contribute
-                to organizational success. Seeking opportunities to grow as a software developer and build a successful career in the technology industry.
+            <h3 class="section-title">Career Objective</h3>
+
+            <p>
+                Motivated second-year Computer Science student with a strong
+                interest in web development and mobile application development.
+                Passionate about learning new technologies and improving
+                programming, problem-solving, and software development skills
+                through academic projects and self-study. Eager to apply
+                technical knowledge in real-world environments through
+                internships and collaborative projects while gaining valuable
+                professional experience. Committed to continuous learning,
+                teamwork, and developing innovative software solutions that
+                contribute to organizational success. Seeking opportunities to
+                grow as a software developer and build a successful career in
+                the technology industry.
             </p>
 
-        </div>
+        </section>
 
-        <!-- Container for Technical Skills and Education -->
+        <!-- Skills and Education -->
         <div id="middlemother">
 
-            <!-- Technical Skills Section -->
-            <div id="techskill">
+            <!-- Technical Skills -->
+            <section id="techskill">
 
-                <h3 class="techbox">Technical Skills</h3>
+                <h3 class="section-title">Technical Skills</h3>
 
-                <!-- Skills table -->
-                <table>
-                    <tbody>
+                <div class="skills-table-container">
 
-                        <!-- Programming Skills -->
-                        <tr align="left" valign="top">
-                            <th>
-                                <h4>Programming Related Skills</h4>
-                            </th>
+                    <table class="resume-table">
 
-                            <td>
-                                <ul>
-                                    <li>Python</li>
-                                    <li>HTML</li>
-                                    <li>CSS</li>
-                                </ul>
-                            </td>
-                        </tr>
+                        <tbody>
 
-                        <!-- Other Technical Skills -->
-                        <tr align="left" valign="top">
-                            <th>
-                                <h4>Other Soft Skills</h4>
-                            </th>
+                            <tr>
+                                <th>
+                                    Programming Related Skills
+                                </th>
 
-                            <td>
-                                <ul>
-                                    <li>Adobe Photoshop</li>
-                                    <li>Adobe Illustrator</li>
-                                    <li>Microsoft Word</li>
-                                    <li>Microsoft Excel</li>
-                                </ul>
-                            </td>
-                        </tr>
+                                <td>
+                                    <ul>
+                                        <li>Python</li>
+                                        <li>HTML</li>
+                                        <li>CSS</li>
+                                    </ul>
+                                </td>
+                            </tr>
 
-                    </tbody>
-                </table>
+                            <tr>
+                                <th>
+                                    Other Soft Skills
+                                </th>
 
-            </div>
+                                <td>
+                                    <ul>
+                                        <li>Adobe Photoshop</li>
+                                        <li>Adobe Illustrator</li>
+                                        <li>Microsoft Word</li>
+                                        <li>Microsoft Excel</li>
+                                    </ul>
+                                </td>
+                            </tr>
 
-            <!-- Education Section -->
-            <div id="education">
+                        </tbody>
 
-                <h3 class="educationbox">Education</h3>
+                    </table>
 
-                <!-- Yangon Technological University -->
-                <div class="educationitem">
-                    <img src="https://bit.ly/4wmrnqK" />
-
-                    <span style="padding-left:10px;">Studied at</span>
-
-                    <a href="https://www.ytu.edu.mm/">
-                        Yangon Technology University (YTU)
-                    </a>
                 </div>
 
-                <!-- Kasem Bundit University -->
-                <div class="educationitem">
-                    <img src="https://bit.ly/4eUWyCj" />
+            </section>
 
-                    <span style="padding-left:10px;">Studying at</span>
+            <!-- Education -->
+            <section id="education">
 
-                    <a href="https://kbu.ac.th/">
-                        Kasem Bundit University (KBU)
-                    </a>
+                <h3 class="section-title">Education</h3>
+
+                <div class="education-list">
+
+                    <div class="educationitem">
+
+                        <img
+                            src="https://bit.ly/4wmrnqK"
+                            alt="Yangon Technological University logo">
+
+                        <div class="education-text">
+
+                            <span>Studied at</span>
+
+                            <a
+                                href="https://www.ytu.edu.mm/"
+                                target="_blank"
+                                rel="noopener">
+                                Yangon Technology University (YTU)
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                    <div class="educationitem">
+
+                        <img
+                            src="https://bit.ly/4eUWyCj"
+                            alt="Kasem Bundit University logo">
+
+                        <div class="education-text">
+
+                            <span>Studying at</span>
+
+                            <a
+                                href="https://kbu.ac.th/"
+                                target="_blank"
+                                rel="noopener">
+                                Kasem Bundit University (KBU)
+                            </a>
+
+                        </div>
+
+                    </div>
+
                 </div>
 
-            </div>
+            </section>
 
         </div>
 
-        </div>
-        
     </div>
-    <div id="buttonContainer">
-        <button class="back" onclick="location.href='index.html'">Back</button>
-    </div>
-</body>
 
-</html>
+</main>
+
+<!-- Back Button -->
+<div id="buttonContainer">
+
+    <button
+        class="back"
+        onclick="location.href='index.html'">
+        ← Back to Assignments
+    </button>
+
+</div>
+
+</body> </html>
