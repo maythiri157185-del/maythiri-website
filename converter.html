@@ -1,56 +1,176 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <style>
-    body {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 380px;
-        height: auto;
-        border: 1px solid #ccc;
-        border-radius: 25px;
-        box-shadow: 3px 2px 10px rgb(117, 117, 117);
-    }
-    #items{
-        margin-bottom: 25px;
-    }    
-  </style>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Measurement Converter</title>
+
+    <style>
+
+        body {
+            margin: 0;
+            padding: 30px;
+
+            font-family: "Times New Roman", serif;
+
+            background-color: #eaf4ff;
+        }
+
+        .container {
+            width: 380px;
+            max-width: 90%;
+
+            margin: 0 auto;
+
+            border: 1px solid #ccc;
+            border-radius: 25px;
+
+            box-shadow: 3px 2px 10px rgb(117, 117, 117);
+
+            background-color: white;
+
+            padding: 25px 30px;
+        }
+
+        #items {
+            margin-bottom: 5px;
+        }
+
+        h2 {
+            margin-top: 0;
+            font-size: 32px;
+        }
+
+        input {
+            height: 22px;
+            font-size: 16px;
+        }
+
+        button {
+            font-size: 16px;
+            padding: 3px 10px;
+            cursor: pointer;
+        }
+
+        #demo {
+            font-size: 18px;
+        }
+
+        @media (max-width: 600px) {
+
+            body {
+                padding: 20px 10px;
+            }
+
+            .container {
+                width: 100%;
+                max-width: 380px;
+
+                padding: 20px;
+            }
+
+            h2 {
+                font-size: 28px;
+            }
+
+            input {
+                width: 100%;
+                max-width: 210px;
+
+                box-sizing: border-box;
+                margin-top: 8px;
+            }
+
+            #items > button {
+                margin-top: 8px;
+            }
+
+        }
+
+        @media (max-width: 380px) {
+
+            .container {
+                padding: 18px;
+            }
+
+            h2 {
+                font-size: 25px;
+            }
+
+            input {
+                max-width: 100%;
+            }
+
+        }
+
+    </style>
+
 </head>
+
 <body>
-  <div class="container">
-    <div id="items">
-      <h2>Measurement Converter</h2>
-      <span>Enter Inch:</span>
-      <input type="number" id="typeNumber"></input>
-      <button type="button" onclick="myFunction()" style="width: 75px; height: auto;">Submit</button>
-      <p id="demo">Equal to: </p>
-      <button onclick="location.href='index.html'">Back</button>
+
+    <div class="container">
+
+        <div id="items">
+
+            <h2>Measurement Converter</h2>
+
+            <span>Enter Inch:</span>
+
+            <input
+                type="number"
+                id="typeNumber">
+
+            <button
+                type="button"
+                onclick="myFunction()">
+                Submit
+            </button>
+
+            <p id="demo">
+                Equal to:
+            </p>
+
+            <button onclick="location.href='index.html'">
+                Back
+            </button>
+
+        </div>
+
     </div>
 
-  </div>
 
-  <script>
-    function myFunction(){
-      let a = document.getElementById("typeNumber").value;
-      if (a === ""){
-        alert("Please enter a value.");
-        return;
-      }
-      let x = Number(a);
-      if (isNaN(x) || x < 0){
-        alert ("Please enter a vaild number.");
-        return;
-      } 
-      let y = x * 2.54;
-      document.getElementById("demo").innerText = "Equal to: " + y + " cm"
-    }
-  </script>
+    <script>
+
+        function myFunction(){
+
+            let a = document.getElementById("typeNumber").value;
+
+            if (a === ""){
+                alert("Please enter a value.");
+                return;
+            }
+
+            let x = Number(a);
+
+            if (isNaN(x) || x < 0){
+                alert ("Please enter a vaild number.");
+                return;
+            }
+
+            let y = x * 2.54;
+
+            document.getElementById("demo").innerText =
+                "Equal to: " + y + " cm"
+
+        }
+
+    </script>
 
 </body>
+
 </html>
