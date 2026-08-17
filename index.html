@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+    <link rel="manifest" href=".\manifest.json">
 </head>
 <body>
     <h2>Assignments</h2>
@@ -22,5 +22,16 @@
     <br><br>
 
     <button onclick="location.href='distance.html'">Distance</button>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./service-worker.js')
+            .then((registration) => {
+                console.log('Service Worker Registered');
+            })
+            .catch((error) => {
+                console.error('Service Worker registration failed:', error);
+            });
+        }
+    </script>
 </body>
 </html>
