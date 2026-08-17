@@ -1,102 +1,157 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Assignments</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="manifest" href="./manifest.json">
+    <title>Assignments</title>
 
-<style>
-    * {
-        box-sizing: border-box;
-    }
+    <link rel="manifest" href="./manifest.json">
 
-    body {
-        margin: 0;
-        padding: 24px 16px;
-        min-height: 100vh;
-        font-family: Arial, sans-serif;
-        background: #f5f7fa;
-        text-align: center;
-    }
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    .container {
-        width: 100%;
-        max-width: 500px;
-        margin: 0 auto;
-    }
+        body {
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
 
-    h1 {
-        margin: 20px 0 30px;
-        font-size: 32px;
-    }
+            /* Blue background */
+            background: #E8F3FE;
 
-    .menu {
-        display: flex;
-        flex-direction: column;
-        gap: 14px;
-    }
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
-    .menu button {
-        width: 100%;
-        min-height: 56px;
-        padding: 14px 20px;
-        border: none;
-        border-radius: 12px;
-        font-size: 18px;
-        font-weight: 600;
-        cursor: pointer;
-        background: white;
-        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
-    }
+            padding: 20px;
+        }
 
-    .menu button:active {
-        transform: scale(0.98);
-    }
-</style>
+        .container {
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+        }
 
-</head> <body>
-<div class="container">
+        h1 {
+            color: white;
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
 
-    <h1>Assignments</h1>
+        .menu {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
 
-    <div class="menu">
+        .menu button {
+            width: 100%;
+            min-height: 60px;
 
-        <button onclick="location.href='resume.html'">
-            My Resume
-        </button>
+            padding: 15px 20px;
 
-        <button onclick="location.href='hobby.html'">
-            My Hobby
-        </button>
+            border: none;
+            border-radius: 12px;
 
-        <button onclick="location.href='converter.html'">
-            Converter
-        </button>
+            background: white;
+            color: #222;
 
-        <button onclick="location.href='calculateGrade.html'">
-            Calculate Grade
-        </button>
+            font-size: 18px;
+            font-weight: 600;
 
-        <button onclick="location.href='calculateChange.html'">
-            Calculate Change
-        </button>
+            cursor: pointer;
 
-        <button onclick="location.href='distance.html'">
-            Distance
-        </button>
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 
-    </div>
+            transition: 0.2s;
+        }
 
-</div>
+        .menu button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
 
-<script>
-    if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('./service-worker.js')
-            .then(() => {
-                console.log('Service Worker Registered');
-            })
-            .catch((error) => {
-                console.error('Service Worker registration failed:', error);
-            });
-    }
-</script>
+        .menu button:active {
+            transform: scale(0.97);
+        }
 
-</body> </html>
+        /* Mobile */
+        @media (max-width: 500px) {
+
+            body {
+                padding: 20px 16px;
+            }
+
+            h1 {
+                font-size: 30px;
+                margin-bottom: 25px;
+            }
+
+            .menu {
+                gap: 12px;
+            }
+
+            .menu button {
+                min-height: 58px;
+                font-size: 17px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="container">
+
+        <h1>Assignments</h1>
+
+        <div class="menu">
+
+            <button onclick="location.href='resume.html'">
+                My Resume
+            </button>
+
+            <button onclick="location.href='hobby.html'">
+                My Hobby
+            </button>
+
+            <button onclick="location.href='converter.html'">
+                Converter
+            </button>
+
+            <button onclick="location.href='calculateGrade.html'">
+                Calculate Grade
+            </button>
+
+            <button onclick="location.href='calculateChange.html'">
+                Calculate Change
+            </button>
+
+            <button onclick="location.href='distance.html'">
+                Distance
+            </button>
+
+        </div>
+
+    </main>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./service-worker.js')
+                .then(() => {
+                    console.log('Service Worker Registered');
+                })
+                .catch((error) => {
+                    console.error(
+                        'Service Worker registration failed:',
+                        error
+                    );
+                });
+        }
+    </script>
+
+</body>
+</html>
